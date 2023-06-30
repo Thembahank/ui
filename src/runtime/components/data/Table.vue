@@ -70,10 +70,7 @@ import type { PropType } from 'vue'
 import { capitalize, orderBy } from 'lodash-es'
 import { defu } from 'defu'
 import type { Button } from '../../types/button'
-import { useAppConfig } from '#imports'
-// TODO: Remove
-// @ts-expect-error
-import appConfig from '#build/app.config'
+import appConfig from '../../app.config'
 
 // const appConfig = useAppConfig()
 
@@ -139,8 +136,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup (props, { emit }) {
     // TODO: Remove
-    const appConfig = useAppConfig()
-
+  
     const ui = computed<Partial<typeof appConfig.ui.table>>(() => defu({}, props.ui, appConfig.ui.table))
 
     const columns = computed(() => props.columns ?? Object.keys(props.rows[0] ?? {}).map((key) => ({ key, label: capitalize(key), sortable: false })))
@@ -201,17 +197,12 @@ export default defineComponent({
     }
 
     return {
-      // eslint-disable-next-line vue/no-dupe-keys
       ui,
-      // eslint-disable-next-line vue/no-dupe-keys
       sort,
-      // eslint-disable-next-line vue/no-dupe-keys
       columns,
-      // eslint-disable-next-line vue/no-dupe-keys
       rows,
       selected,
       indeterminate,
-      // eslint-disable-next-line vue/no-dupe-keys
       emptyState,
       isSelected,
       onSort

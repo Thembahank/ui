@@ -935,6 +935,8 @@ const notifications = {
   container: 'px-4 sm:px-6 py-6 space-y-3 overflow-y-auto'
 }
 
+const colors = []
+
 export default {
   ui: {
     table,
@@ -967,6 +969,7 @@ export default {
     tooltip,
     contextMenu,
     notification,
-    notifications
+    notifications,
+    colors
   }
 }

@@ -46,10 +46,7 @@ import { omit } from 'lodash-es'
 import UIcon from '../elements/Icon.vue'
 import UButton from '../elements/Button.vue'
 import type { Button } from '../../types/button'
-import { useAppConfig } from '#imports'
-// TODO: Remove
-// @ts-expect-error
-import appConfig from '#build/app.config'
+import appConfig from '../../app.config'
 
 export default defineComponent({
   components: {

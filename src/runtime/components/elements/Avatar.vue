@@ -15,10 +15,7 @@ import { defineComponent, ref, computed, watch } from 'vue'
 import type { PropType } from 'vue'
 import { defu } from 'defu'
 import { classNames } from '../../utils'
-import { useAppConfig } from '#imports'
-// TODO: Remove
-// @ts-expect-error
-import appConfig from '#build/app.config'
+import appConfig from '../../app.config'
 
 // const appConfig = useAppConfig()
 
